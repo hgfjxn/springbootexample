@@ -1,0 +1,7 @@
+liquibase:
+  change-log: classpath:config/liquibase/master.xml
+  user: root
+  password:
+  url: jdbc:mysql://localhost:3306/test
+  enabled: true
+  drop-first: false

@@ -1,0 +1,44 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <property name="autoIncrement" value="true" dbms="mysql"/>
+    <changeSet id="2017111801" author="heguangfu">
+        <comment>books</comment>
+        <createTable tableName="author">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="age" type="int">
+            </column>
+            <column name="born" type="timestamp">
+            </column>
+        </createTable>
+        <loadData tableName="author" encoding="UTF-8" file="config/liquibase/author.csv" separator=";"/>
+
+        <createTable tableName="book">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="pages" type="int">
+            </column>
+            <column name="author_id" type="bigint">
+            </column>
+            <column name="publish_time" type="timestamp">
+            </column>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="book"
+                                 baseColumnNames="author_id"
+                                 constraintName="book_author_id"
+                                 referencedTableName="author"
+                                 referencedColumnNames="id"/>
+        <loadData tableName="book" encoding="UTF-8" file="config/liquibase/book.csv" separator=";"/>
+    </changeSet>
+</databaseChangeLog>
