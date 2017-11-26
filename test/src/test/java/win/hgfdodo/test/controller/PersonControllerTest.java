@@ -30,7 +30,7 @@ public class PersonControllerTest {
     private PersonService personService;
 
     /**
-     * personList cannot annotated as MockBean.
+     * personList cannot annotated as MockBean and it cannot contains mock bean!!!
      * if so ,the personList would be null and mockMvc response will convert null to json,
      * and it will throw an exception when convert personList to json string.
      */
@@ -42,7 +42,10 @@ public class PersonControllerTest {
     @Before
     public void init() {
         for (int i = 0; i < 3; i++) {
-            personList.add(mock(Person.class));
+            Person person = new Person();
+            person.setAge(i);
+            person.setName("hgf" + i);
+            personList.add(person);
         }
         given(personService.getPersonsByNameLike("hgf")).willReturn(personList);
     }
