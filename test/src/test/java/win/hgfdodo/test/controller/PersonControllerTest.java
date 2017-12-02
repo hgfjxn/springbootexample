@@ -53,6 +53,7 @@ public class PersonControllerTest {
     @Test
     public void getPersonByNameLike() throws Exception {
         mockMvc.perform(get("/person/find").param("name", "hgf"))
+                .andExpect(status().isOk())
                 .andDo(print())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE));
     }
