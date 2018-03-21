@@ -22,3 +22,10 @@
 hs_err_pid*
 
 .idea/
+
+out/
+target/
+.mvn
+*.iml
+
+.DS_Store
