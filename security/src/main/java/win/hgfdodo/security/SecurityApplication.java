@@ -1,11 +1,12 @@
 package win.hgfdodo.security;
 
-import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+@SpringBootApplication
 public class SecurityApplication {
 
-  public static void main(String[] args) {
-    AnnotationConfigWebApplicationContext applicationContext = new AnnotationConfigWebApplicationContext();
-    applicationContext.register(MyConfig.class);
-  }
+	public static void main(String[] args) {
+		SpringApplication.run(SecurityApplication.class, args);
+	}
 }

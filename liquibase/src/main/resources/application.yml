@@ -4,4 +4,4 @@ liquibase:
   password:
   url: jdbc:mysql://localhost:3306/test
   enabled: true
-  drop-first: false
+  drop-first: true

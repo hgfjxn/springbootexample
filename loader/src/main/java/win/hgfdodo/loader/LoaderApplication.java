@@ -22,6 +22,7 @@ public class LoaderApplication implements CommandLineRunner {
   public static void main(String[] args) {
     SpringApplication springApplication = new SpringApplication(LoaderApplication.class);
     springApplication.run(args);
+    System.out.println(sun.misc.Launcher.getBootstrapClassPath());
   }
 
   @Override

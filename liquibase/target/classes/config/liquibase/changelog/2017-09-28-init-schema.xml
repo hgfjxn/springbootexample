@@ -6,25 +6,33 @@
 
     <property name="autoIncrement" value="true" dbms="mysql"/>
 
-    <changeSet id="init-schema" author="heguangfu" >
+    <changeSet id="init-schema" author="heguangfu">
         <comment>init schema</comment>
         <createTable tableName="user">
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="nick_name" type="varchar(255)">
-                <constraints  nullable="false"/>
+                <constraints nullable="false"/>
             </column>
             <column name="email" type="varchar(255)">
-                <constraints  nullable="false"/>
+                <constraints nullable="false"/>
             </column>
-            <column name="register_time" type="timestamp"  defaultValueComputed="CURRENT_TIMESTAMP">
+            <column name="actived" type="boolean" defaultValueBoolean="true">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted" type="boolean" defaultValueBoolean="false">
+                <constraints nullable="false"/>
+            </column>
+            <column name="register_time" type="timestamp" defaultValueComputed="CURRENT_TIMESTAMP">
                 <constraints nullable="false"/>
             </column>
         </createTable>
 
-        <modifySql dbms="mysql">
-            <append value="ENGINE=INNODB DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_general_ci"/>
-        </modifySql>
+        <loadData tableName="user" encoding="UTF-8" file="config/liquibase/data/user.csv" separator=";">
+            <column name="actived" type="boolean"/>
+            <column name="deleted" type="boolean"/>
+            <column name="register_time" type="timestamp"/>
+        </loadData>
     </changeSet>
 </databaseChangeLog>
