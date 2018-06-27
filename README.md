@@ -12,3 +12,4 @@ useful spring boot examples, it contains:
 9. security: spring boot security example
 10. test: spring boot web integrate example
 11. nio: java nio example
+12. transaction: transaction exception and common error usage example.
