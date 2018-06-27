@@ -13,3 +13,6 @@ useful spring boot examples, it contains:
 10. test: spring boot web integrate example
 11. nio: java nio example
 12. transaction: transaction exception and common error usage example.
+13. aop: aop example
+14. log4jexample: log to different file example
+15. timezone-mybatis: java+mybatis+mysql time examplle
