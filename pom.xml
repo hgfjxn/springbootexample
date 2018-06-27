@@ -12,6 +12,8 @@
         <module>liquibase</module>
         <module>web</module>
         <module>mybatis</module>
+        <module>nio</module>
+        <module>transaction-demo</module>
     </modules>
 
     <parent >

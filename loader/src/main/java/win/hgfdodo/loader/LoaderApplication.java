@@ -31,6 +31,8 @@ public class LoaderApplication implements CommandLineRunner {
     System.out.println("active: " + Arrays.asList(environment.getActiveProfiles()));
     System.out.println("application name: " + environment.getProperty("spring.application.name"));
 
+    System.out.println("hello: "+ environment.getProperty("hello"));
+
     System.out.println("profile: " + System.getProperty("spring.profiles.active"));
     System.out.println("profile: " + environment.getProperty("spring.profiles.active"));
     System.out.println("server port: "+ System.getProperty("server.port"));
