@@ -13,7 +13,10 @@
         <module>web</module>
         <module>mybatis</module>
         <module>nio</module>
-        <module>transaction-demo</module>
+        <module>transaction</module>
+        <module>dubbo-server-demo</module>
+        <module>dubbo-service-api</module>
+        <module>dubbo-client-demo</module>
     </modules>
 
     <parent >
